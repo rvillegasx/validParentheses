@@ -5,14 +5,15 @@ const param = myArg[0];
 let parentesis = BigInt(0);
 let corchetes = BigInt(0);
 let cuadrados = BigInt(0);
-if (param.length % 2 != 0) {
+
+if (param.length % 2 == 0) {
     for(let i = 0; i < param.length; i++) {
         if (param.charAt(i) == '(') {
             parentesis = (parentesis + BigInt(1)) + BigInt(corchetes + cuadrados);
         }
         if (param.charAt(i) == ')') {
             if (parentesis == 0) {
-                parentesis = BigInt(-1);
+                parentesis = BigInt(1);
                 continue;
             }
             parentesis = (parentesis - BigInt(1)) - BigInt(corchetes + cuadrados);
@@ -22,7 +23,7 @@ if (param.length % 2 != 0) {
         }
         if (param.charAt(i) == '}') {
             if (corchetes == 0) {
-                corchetes = BigInt(-1);
+                corchetes = BigInt(1);
                 continue;
             }
             corchetes = (corchetes - BigInt(1)) - BigInt(parentesis + cuadrados);
@@ -32,7 +33,7 @@ if (param.length % 2 != 0) {
         }
         if (param.charAt(i) == ']') {
             if (cuadrados == 0) {
-                cuadrados = BigInt(-1);
+                cuadrados = BigInt(1);
                 continue;
             }
             cuadrados = (cuadrados - BigInt(1)) - BigInt(corchetes + parentesis);
