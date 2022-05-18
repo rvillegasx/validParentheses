@@ -11,18 +11,27 @@ for(let i = 0; i < param.length; i++) {
         parentesis = (parentesis + 1) + (corchetes + cuadrados);
     }
     if (param.charAt(i) == ')') {
+        if (parentesis == 0) {
+            continue;
+        }
         parentesis = (parentesis - 1) - (corchetes + cuadrados);
     }
     if (param.charAt(i) == '{') {
         corchetes = (corchetes + 1) + (parentesis + cuadrados);
     }
     if (param.charAt(i) == '}') {
+        if (corchetes == 0) {
+            continue;
+        }
         corchetes = (corchetes - 1) - (parentesis + cuadrados);
     }
     if (param.charAt(i) == '[') {
         cuadrados = (cuadrados + 1) + (corchetes + parentesis);
     }
     if (param.charAt(i) == ']') {
+        if (cuadrados == 0) {
+            continue;
+        }
         cuadrados = (cuadrados - 1) - (corchetes + parentesis);
     }
 }
