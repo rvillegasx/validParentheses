@@ -1,7 +1,5 @@
 const myArg = process.argv.slice(2);
 
-// console.log('argumento', myArgs[0]);
-
 const param = myArg[0];
 
 let parentesis = 0;
