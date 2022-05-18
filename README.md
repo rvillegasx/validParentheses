@@ -6,7 +6,7 @@ if the input string is valid.
 ## Installation
 
 ```bash
-git clone
+git clone https://github.com/rvillegasx/validParentheses.git
 ```
 
 ### Constraints:
