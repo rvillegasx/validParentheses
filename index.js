@@ -14,7 +14,7 @@ if (param.length % 2 == 0) {
         if (param.charAt(i) == ')') {
             if (parentesis == 0) {
                 parentesis = BigInt(1);
-                continue;
+                break;
             }
             parentesis = (parentesis - BigInt(1)) - BigInt(corchetes + cuadrados);
         }
@@ -24,7 +24,7 @@ if (param.length % 2 == 0) {
         if (param.charAt(i) == '}') {
             if (corchetes == 0) {
                 corchetes = BigInt(1);
-                continue;
+                break;
             }
             corchetes = (corchetes - BigInt(1)) - BigInt(parentesis + cuadrados);
         }
@@ -34,7 +34,7 @@ if (param.length % 2 == 0) {
         if (param.charAt(i) == ']') {
             if (cuadrados == 0) {
                 cuadrados = BigInt(1);
-                continue;
+                break;
             }
             cuadrados = (cuadrados - BigInt(1)) - BigInt(corchetes + parentesis);
         }
