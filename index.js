@@ -5,7 +5,7 @@ const param = myArg[0];
 let parentesis = BigInt(0);
 let corchetes = BigInt(0);
 let cuadrados = BigInt(0);
-if (param.length > 1) {
+if (param.length % 2 != 0) {
     for(let i = 0; i < param.length; i++) {
         if (param.charAt(i) == '(') {
             parentesis = (parentesis + BigInt(1)) + BigInt(corchetes + cuadrados);
